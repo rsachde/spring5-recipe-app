@@ -1,6 +1,7 @@
 package guru.springframework.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /*
 Created by risachde8
@@ -25,6 +26,9 @@ public class Recipe {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredientset;
 
     private String source;
     private String url;

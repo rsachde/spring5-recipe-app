@@ -33,6 +33,7 @@ public class Notes {
     }
 
     @OneToOne
+    //we are not cascading it, because if we delete the notes object then recipe
    private Recipe recipe;
 
     @Lob
