@@ -10,6 +10,7 @@ public class Ingredient {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
+    // want to load as soon as ingredient loaded. By default it is eager but we can explicitly declare as eager
     @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMeasure uom;
 

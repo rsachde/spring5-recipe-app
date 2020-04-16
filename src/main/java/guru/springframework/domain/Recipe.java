@@ -18,6 +18,38 @@ public class Recipe {
     private Integer prepTime;
     private Integer cookTime;
     private Integer servings;
+    private Difficulty difficulty;
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
+    //    @JoinTable(name="recipe_category", joinColumns = @JoinColumn(name="recipe_id"),
+    //            inverseJoinColumns =@JoinColumn(name="category_id"))
+
+    @ManyToMany
+    private Set<Category> categories;
+
+    @Enumerated(value=EnumType.STRING)
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public Set<Ingredient> getIngredientset() {
+        return ingredientset;
+    }
+
+    public void setIngredientset(Set<Ingredient> ingredientset) {
+        this.ingredientset = ingredientset;
+    }
 
     public Long getId() {
         return id;
